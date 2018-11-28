@@ -14,6 +14,15 @@ namespace CarRental
             //similar Decorator
             ASubscription subcription = new Occasional(new Electric(20, 3));
             Console.WriteLine($"Subscription Rental Eur {subcription.Calculate()}");
+            //Factory from Model base for MVC
+            ASubscription subscriptionFromFactory = SubscriptionFactory.Create(new Library.Core.Models.Data()
+            {
+                Car = "Large",
+                Subscription = "Frequent",
+                Kilometers = 100,
+                Hours = 5
+            });
+            Console.WriteLine($"Subscription Rental from Factory Eur {subscriptionFromFactory.Calculate()}");
             Console.ReadLine();
         }
     }
