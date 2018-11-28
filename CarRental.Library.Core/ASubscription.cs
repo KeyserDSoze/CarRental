@@ -16,7 +16,7 @@ namespace CarRental.Library.Core
 
         public virtual decimal Calculate()
         {
-            (decimal perHours, decimal perKilometers) = SubscriptionPrice.Value(this.car.GetType().Name, this.GetType().Name);
+            (decimal perHours, decimal perKilometers) = Database.Instance(this.car.GetType().Name, this.GetType().Name);
             return (perKilometers * this.car.Kilometers) + (perHours * this.car.Hours);
         }
     }
