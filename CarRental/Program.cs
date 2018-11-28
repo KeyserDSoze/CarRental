@@ -11,6 +11,7 @@ namespace CarRental
     {
         static void Main(string[] args)
         {
+            //similar Decorator
             ASubscription subcription = new Occasional(new Electric(20, 3));
             Console.WriteLine($"Subscription Rental Eur {subcription.Calculate()}");
             Console.ReadLine();
